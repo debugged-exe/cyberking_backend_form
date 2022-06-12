@@ -40,7 +40,7 @@ async function findUserByEmail(email) {
     throw new Error(`Unable to connect to the database.`);
   }
 }
-router.post("/", async (req, res) => {
+router.post("/post-feedback", async (req, res) => {
   try {
     const feedData = new Feedback({
       name: req.body.name,
