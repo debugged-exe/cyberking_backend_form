@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
-const Feedback = require("./models/Feedback");
+const Feedback = require("./Models/Feedback");
 app.use(express.static(__dirname + "/public"));
 var cors = require("cors");
 const mongoose = require("mongoose");
