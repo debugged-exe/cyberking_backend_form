@@ -62,6 +62,16 @@ router.post("/", async (req, res) => {
     // 	{ msg: "Check Details." });
   }
 });
+router.get("/", async (req, res) => {
+  try {
+    
+    res.json("works ")
+  } catch (error) {
+    res.status(400).json();
+    // res.render('FeedbackForm',
+    // 	{ msg: "Check Details." });
+  }
+});
 
 app.use("/", router);
 // app.listen(port, () => {
