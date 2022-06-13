@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const Feedback = require("./Models/Feedback");
+const Event = require("./models/Event");
+
 app.use(express.static(__dirname + "/public"));
 var cors = require("cors");
 const mongoose = require("mongoose");
@@ -26,6 +28,16 @@ router.get("/fetch_feedbacks", async (req, res) => {
   try {
     const feedbacks = await Feedback.find();
     res.json(feedbacks);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("some error ocured");
+  }
+});
+// route to get upcoming events
+router.get("/fetch_events", async (req, res) => {
+  try {
+    const events = await Event.find();
+    res.json(events);
   } catch (error) {
     console.log(error.message);
     res.status(500).send("some error ocured");
